@@ -21,6 +21,11 @@ class UserServices {
     })
   }
 
+  //ký access_token và refresh_token
+  private signAccessAndRefreshToken(user_id: string) {
+    return Promise.all([this.signRefreshToken(user_id), this.signAccessToken(user_id)])
+  }
+
   async checkEmailExist(email: string) {
     const user = await databaseService.users.findOne({ email })
     return Boolean(user)
@@ -35,10 +40,13 @@ class UserServices {
       })
     )
     const user_id = result.insertedId.toString()
-    const [access_token, refresh_token] = await Promise.all([
-      this.signRefreshToken(user_id),
-      this.signAccessToken(user_id)
-    ])
+    const [access_token, refresh_token] = await this.signAccessAndRefreshToken(user_id)
+    return { access_token, refresh_token }
+  }
+
+  async login(user_id: string) {
+    //dùng user_id để tạo access_token và refresh_token
+    const [access_token, refresh_token] = await this.signAccessAndRefreshToken(user_id)
     return { access_token, refresh_token }
   }
 }
