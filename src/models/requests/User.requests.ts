@@ -18,6 +18,12 @@ export interface LogoutReqBody {
   refresh_token: string
 }
 
+export interface ResetPasswordReqBody {
+  forgot_password_token: string
+  password: string
+  confirm_password: string
+}
+
 export interface TokenPayLoad extends JwtPayload {
   user_id: string
   token_type: TokenType
