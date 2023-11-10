@@ -56,5 +56,18 @@ export const USERS_MESSAGES = {
   LOCATION_MUST_BE_A_STRING: 'Location must be a string',
   BIO_LENGTH_MUST_BE_LESS_THAN_200: 'Bio length must be less than 200',
   UPDATE_ME_SUCCESS: 'Update me success',
-  GET_PROFILE_SUCCESS: 'Get profile success'
+  GET_PROFILE_SUCCESS: 'Get profile success',
+  INVALID_USER_ID: 'Invalid user id',
+  FOLLOWED_USER_NOT_FOUND: 'Followed user not found',
+  FOLLOWED: 'Followed',
+  FOLLOW_SUCCESS: 'Follow success',
+  ALREADY_UNFOLLOWED: 'Already unfollowed',
+  UNFOLLOW_SUCCESS: 'Unfollow success',
+  USERNAME_ALREADY_EXISTS: 'Username already exists',
+  OLD_PASSWORD_NOT_MATCH: 'Old password not match',
+  CHANGE_PASSWORD_SUCCESS: 'Change password success',
+  REFRESH_TOKEN_SUCCESS: 'Refresh token success',
+  OAUTH_SUCCESS: 'Oauth success',
+  EMAIL_NOT_VERIFIED: 'Email not verified',
+  UPLOAD_SUCCESS: 'Upload success'
 } as const
